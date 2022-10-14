@@ -49,19 +49,21 @@
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
-//           navigator.geolocation.getCurrentPosition(function(position) {
-//             var pos = {
-//               lat: position.coords.latitude,
-//               lng: position.coords.longitude
-//             };
+          navigator.geolocation.getCurrentPosition((position) => {
+            var pos = {
+              // lat: position.coords.latitude,
+              // lng: position.coords.longitude
+              lat: 35.672093585245726,
+              lng: -78.75178138138082
+            };
 
             infoWindow = new google.maps.InfoWindow;
 
-            infoWindow.setPosition({lat: 35.672093585245726, lng: -78.75178138138082});
+            infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
-          }, function() {
+          }, () => {
             handleLocationError(true, infoWindow, map.getCenter());
           });
         } else {

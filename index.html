@@ -63,9 +63,11 @@
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
-          }, () => {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
+          }
+          // , () => {
+          //   handleLocationError(true, infoWindow, map.getCenter());
+          // }
+          );
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
@@ -91,7 +93,7 @@
         document.getElementById('Coordinates').innerHTML = marker.position;
       }
 
-      google.maps.event.addDomListener(window, 'load', initialize);
+      // google.maps.event.addDomListener(window, 'load', initialize);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=	AIzaSyDijo6FcyCAzm7QUr9-iJvjBTTgaOnWeyk&callback=initMap"
     async defer></script>
